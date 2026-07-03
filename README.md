@@ -327,11 +327,11 @@ display:none;
 
 <ul>
 
-<li><a href="hero">首頁</a></li>
+<li><a href="#hero">宗旨</a></li>
 
-<li><a href="#story">我們的故事</a></li>
+<li><a href="#story">建設</a></li>
 
-<li><a href="#">捐款</a></li>
+<li><a href="#">服務內容</a></li>
 
 <li><a href="#">志工</a></li>
 
