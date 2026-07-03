@@ -341,7 +341,7 @@ display:none;
 
 </nav>
 
-<header class="hero">
+<header id="hero" class="hero">
 
 <div>
 
@@ -355,7 +355,7 @@ display:none;
 
 </header>
 
-<section id="story">
+<section id="hero" class="hero">
 
 <h2 class="title">我們的故事</h2>
 
