@@ -329,7 +329,7 @@ display:none;
 
 <li><a href="hero">首頁</a></li>
 
-<li><a href="story">我們的故事</a></li>
+<li><a href="#story">我們的故事</a></li>
 
 <li><a href="#">捐款</a></li>
 
