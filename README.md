@@ -327,9 +327,9 @@ display:none;
 
 <ul>
 
-<li><a href="#">首頁</a></li>
+<li><a href="hero">首頁</a></li>
 
-<li><a href="#">認養</a></li>
+<li><a href="story">認養</a></li>
 
 <li><a href="#">捐款</a></li>
 
@@ -355,7 +355,7 @@ display:none;
 
 </header>
 
-<section>
+<section id="story">
 
 <h2 class="title">我們的故事</h2>
 
