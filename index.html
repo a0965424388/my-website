@@ -3,473 +3,164 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>流浪動物森林之家｜每一個生命，都值得一個家</title>
 
-<title>流浪動物森林之家</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Noto Sans TC',sans-serif;
-}
-
-body{
-background:#fafaf7;
-color:#444;
-line-height:1.8;
-}
-
-/* 導覽列 */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-padding:18px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 5px 15px rgba(0,0,0,.08);
-z-index:999;
-}
-
-.logo{
-font-size:28px;
-font-weight:900;
-color:#3c7b3d;
-}
-
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
-color:#555;
-font-weight:700;
-}
-
-/* Hero */
-
-.hero{
-
-height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.35)),
-url("images/hero.jpg");
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
-
-}
-
-.hero h1{
-font-size:58px;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:24px;
-margin-bottom:35px;
-}
-
-.btn{
-
-display:inline-block;
-
-padding:18px 40px;
-
-background:#ff8f00;
-
-color:white;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-size:22px;
-
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.btn:hover{
-
-background:#ff6f00;
-
-transform:scale(1.05);
-
-}
-
-section{
-
-padding:90px 10%;
-
-}
-
-.title{
-
-text-align:center;
-
-font-size:42px;
-
-color:#2e7d32;
-
-margin-bottom:50px;
-
-}
-
-/* 故事 */
-
-.story{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-align-items:center;
-
-}
-
-.story img{
-
-width:100%;
-
-border-radius:20px;
-
-}
-
-/* 卡片 */
-
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-}
-
-.card{
-
-background:white;
-
-border-radius:20px;
-
-overflow:hidden;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-transition:.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.card img{
-
-width:100%;
-
-height:250px;
-
-object-fit:cover;
-
-}
-
-.card h3{
-
-padding:20px;
-
-color:#388e3c;
-
-}
-
-.card p{
-
-padding:0 20px 20px;
-
-}
-
-/* 救援成果 */
-
-.stats{
-
-display:flex;
-
-justify-content:space-around;
-
-flex-wrap:wrap;
-
-text-align:center;
-
-}
-
-.stat{
-
-margin:20px;
-
-}
-
-.number{
-
-font-size:60px;
-
-font-weight:bold;
-
-color:#ff9800;
-
-}
-
-/* 捐款 */
-
-.donate{
-
-background:#2e7d32;
-
-color:white;
-
-text-align:center;
-
-}
-
-.donate h2{
-
-font-size:46px;
-
-margin-bottom:20px;
-
-}
-
-.donate p{
-
-font-size:22px;
-
-margin-bottom:30px;
-
-}
-
-/* Footer */
-
-footer{
-
-background:#222;
-
-color:white;
-
-text-align:center;
-
-padding:40px;
-
-}
-
-@media(max-width:768px){
-
-.story{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-}
-
-nav ul{
-
-display:none;
-
-}
-
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+<!-- 導覽列 -->
+<header>
+    <div class="container">
+        <h2 class="logo">🐾 流浪動物森林之家</h2>
 
-<div class="logo">🐶 流浪動物森林之家</div>
+        <nav>
+            <a href="#about">關於我們</a>
+            <a href="#story">救援故事</a>
+            <a href="#adopt">我要認養</a>
+            <a href="#donate">愛心捐款</a>
+            <a href="#contact">聯絡我們</a>
+        </nav>
+    </div>
+</header>
 
-<ul>
+<!-- Hero -->
+<section class="hero">
 
-<li><a href="#hero">宗旨</a></li>
-
-<li><a href="#">建設</a></li>
-
-<li><a href="#">服務內容</a></li>
-
-<li><a href="#">志工</a></li>
-
-<li><a href="#">聯絡我們</a></li>
-
-</ul>
-
-</nav>
-
-<header id="hero" class="hero">
-
-<div>
+<div class="hero-content">
 
 <h1>每一個生命，都值得一個家</h1>
 
-<p>陪伴流浪毛孩找到幸福的歸屬</p>
-
-<a class="btn" href="#">立即支持</a>
-
-</div>
-
-</header>
-
-<section>
-
-<h2 class="title">我們的故事</h2>
-
-<div class="story">
-
-<img src="images/about.jpg">
-
-<div>
-
-<h2>用愛改變生命</h2>
-
 <p>
-
-我們每天投入流浪動物救援、醫療、送養及照護工作，
-
-希望讓更多毛孩重新相信人類。
-
+陪伴流浪毛孩找到幸福的歸屬
 </p>
 
-</div>
+<a href="#donate" class="btn">立即支持</a>
 
 </div>
 
 </section>
 
-<section>
+<!-- 關於 -->
+<section id="about" class="section">
 
-<h2 class="title">等待幸福的毛孩</h2>
+<h2>我們的理念</h2>
+
+<p>
+流浪動物森林之家致力於救援、醫療、安置及送養流浪犬貓，
+相信每一條生命都值得被溫柔對待，
+透過大家的力量，讓更多毛孩重新找到幸福。
+</p>
+
+</section>
+
+<!-- 數據 -->
+<section class="stats">
+
+<div class="card">
+<h3>3,000+</h3>
+<p>成功救援</p>
+</div>
+
+<div class="card">
+<h3>2,500+</h3>
+<p>成功送養</p>
+</div>
+
+<div class="card">
+<h3>500+</h3>
+<p>志工夥伴</p>
+</div>
+
+</section>
+
+<!-- 救援故事 -->
+
+<section id="story" class="section">
+
+<h2>救援故事</h2>
 
 <div class="cards">
 
-<div class="card">
-
+<div class="story-card">
 <img src="images/dog1.jpg">
-
-<h3>小黑</h3>
-
-<p>等待認養中，親人又活潑。</p>
-
+<h3>午吉</h3>
+<p>從受傷浪浪到幸福家庭。</p>
 </div>
 
-<div class="card">
-
-<img src="images/cat1.jpg">
-
-<h3>咪咪</h3>
-
-<p>喜歡撒嬌，期待溫暖的家。</p>
-
-</div>
-
-<div class="card">
-
+<div class="story-card">
 <img src="images/dog2.jpg">
+<h3>奶茶</h3>
+<p>等待屬於自己的家。</p>
+</div>
 
-<h3>阿福</h3>
-
-<p>救援成功，健康恢復中。</p>
-
+<div class="story-card">
+<img src="images/cat1.jpg">
+<h3>小虎</h3>
+<p>經過治療重新展開新生活。</p>
 </div>
 
 </div>
 
 </section>
 
-<section>
+<!-- 認養 -->
 
-<h2 class="title">救援成果</h2>
+<section id="adopt" class="section">
 
-<div class="stats">
+<h2>等待認養</h2>
 
-<div class="stat">
+<p>
+給毛孩一個溫暖的家，
+也讓自己多一位家人。
+</p>
 
-<div class="number">1000+</div>
-
-救援毛孩
-
-</div>
-
-<div class="stat">
-
-<div class="number">850+</div>
-
-成功送養
-
-</div>
-
-<div class="stat">
-
-<div class="number">300+</div>
-
-愛心志工
-
-</div>
-
-</div>
+<a class="btn" href="#">我要認養</a>
 
 </section>
 
-<section class="donate">
+<!-- 捐款 -->
 
-<h2>您的每一份愛心，都能改變生命</h2>
+<section id="donate" class="donate">
 
-<p>一起幫助更多等待希望的毛孩。</p>
+<h2>支持我們</h2>
 
-<a class="btn" href="#">我要捐款</a>
+<p>
+您的每一份捐款，
+都是毛孩活下去的希望。
+</p>
+
+<a class="btn">立即捐款</a>
+
+</section>
+
+<!-- 聯絡 -->
+
+<section id="contact" class="section">
+
+<h2>聯絡我們</h2>
+
+<p>Email：service@example.com</p>
+
+<p>Facebook：流浪動物森林之家</p>
+
+<p>LINE：@foresthome</p>
 
 </section>
 
 <footer>
 
-© 2026 流浪動物森林之家｜因為有您，生命更有希望
+<p>
+© 2026 流浪動物森林之家 All Rights Reserved.
+</p>
 
 </footer>
 
-</body>
+<script src="script.js"></script>
 
+</body>
 </html>
