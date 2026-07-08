@@ -1,1 +1,246 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Noto Sans TC',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#fafaf7;
+color:#333;
+line-height:1.8;
+}
+
+/* 導覽列 */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.9);
+backdrop-filter:blur(12px);
+box-shadow:0 3px 12px rgba(0,0,0,.05);
+z-index:999;
+}
+
+.logo{
+font-size:26px;
+font-weight:900;
+color:#2e7d32;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#555;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#2e7d32;
+}
+
+/* Hero */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+url("images/hero.jpg") center/cover;
+color:white;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:24px;
+margin-bottom:40px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 42px;
+border-radius:50px;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+background:#1b5e20;
+}
+
+section{
+padding:120px 10%;
+}
+
+.title{
+font-size:48px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.subtitle{
+text-align:center;
+max-width:700px;
+margin:auto;
+margin-bottom:70px;
+color:#777;
+}
+
+/* 故事 */
+
+.story{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.story img{
+width:100%;
+border-radius:25px;
+}
+
+/* 毛孩 */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+}
+
+.card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+transition:.35s;
+box-shadow:0 15px 30px rgba(0,0,0,.06);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+}
+
+.card p{
+padding:0 20px 25px;
+color:#666;
+}
+
+/* 救援成果 */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+}
+
+.stat{
+text-align:center;
+}
+
+.number{
+font-size:60px;
+font-weight:900;
+color:#2e7d32;
+}
+
+/* 捐款 */
+
+.donate{
+background:#2e7d32;
+color:white;
+text-align:center;
+border-radius:35px;
+}
+
+.donate h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.donate p{
+margin-bottom:35px;
+font-size:20px;
+}
+
+/* Footer */
+
+footer{
+padding:50px;
+text-align:center;
+color:#888;
+}
+
+/* 動畫 */
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* RWD */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.story{
+grid-template-columns:1fr;
+}
+
+nav ul{
+display:none;
+}
+
+}
 
