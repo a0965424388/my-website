@@ -227,20 +227,44 @@ transform:translateY(0);
 @media(max-width:768px){
 
 .hero h1{
-font-size:42px;
+font-size:40px;
 }
 
 .hero p{
 font-size:20px;
 }
 
+.title{
+font-size:32px;
+}
+
 .story{
 grid-template-columns:1fr;
 }
 
+section{
+padding:70px 5%;
+}
+
+img{
+max-width:100%;
+height:auto;
+}
+
+nav{
+padding:15px 5%;
+}
+
+.logo{
+font-size:20px;
+}
+
 nav ul{
-display:none;
+gap:10px;
+}
+
+nav a{
+font-size:14px;
 }
 
 }
-
