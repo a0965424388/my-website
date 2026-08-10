@@ -224,47 +224,141 @@ transform:translateY(0);
 
 /* RWD */
 
-@media(max-width:768px){
+/* =========================
+   手機版 RWD
+========================= */
 
-.hero h1{
-font-size:40px;
-}
+@media (max-width: 768px){
 
-.hero p{
-font-size:20px;
-}
+    /* 導覽列 */
+    nav{
+        padding:15px 20px;
+    }
 
-.title{
-font-size:32px;
-}
+    .logo{
+        font-size:18px;
+    }
 
-.story{
-grid-template-columns:1fr;
-}
+    nav ul{
+        display:none;
+    }
 
-section{
-padding:70px 5%;
-}
+    /* 首頁 */
+    .hero{
+        min-height:100vh;
+        padding:20px;
+        background-position:center;
+    }
 
-img{
-max-width:100%;
-height:auto;
-}
+    .hero h1{
+        font-size:42px;
+        line-height:1.4;
+        margin-bottom:15px;
+    }
 
-nav{
-padding:15px 5%;
-}
+    .hero p{
+        font-size:17px;
+        line-height:1.8;
+        margin-bottom:30px;
+    }
 
-.logo{
-font-size:20px;
-}
+    .btn{
+        padding:14px 30px;
+        font-size:16px;
+    }
 
-nav ul{
-gap:10px;
-}
+    /* 所有區塊 */
+    section{
+        padding:70px 20px;
+    }
 
-nav a{
-font-size:14px;
-}
+    /* 標題 */
+    .title{
+        font-size:32px;
+        line-height:1.4;
+    }
+
+    .subtitle{
+        font-size:16px;
+        margin-bottom:40px;
+    }
+
+    /* 救援故事 */
+    .story{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .story img{
+        width:100%;
+        border-radius:18px;
+    }
+
+    .story h2{
+        font-size:26px;
+        margin-bottom:10px;
+    }
+
+    .story p{
+        font-size:16px;
+    }
+
+    /* 毛孩卡片 */
+    .cards{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+
+    .card img{
+        height:230px;
+    }
+
+    .card h3{
+        font-size:22px;
+        padding:18px 20px 10px;
+    }
+
+    .card p{
+        font-size:15px;
+        padding:0 20px 20px;
+    }
+
+    /* 救援成果 */
+    .stats{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .number{
+        font-size:48px;
+    }
+
+    /* 捐款區 */
+    .donate{
+        margin:0 20px;
+        padding:50px 25px;
+        border-radius:25px;
+    }
+
+    .donate h2{
+        font-size:30px;
+        line-height:1.5;
+    }
+
+    .donate p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    /* Footer */
+    footer{
+        padding:35px 20px;
+        font-size:14px;
+    }
 
 }
