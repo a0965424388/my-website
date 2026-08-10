@@ -228,204 +228,63 @@ transform:translateY(0);
    手機版 RWD
 ========================= */
 
-```css
-@media (max-width: 768px){
-
-    /* =========================
-       導覽列
-    ========================= */
-
-    nav{
-        padding:15px 20px;
-    }
-
-    .logo{
-        font-size:18px;
-    }
-
-    /* 手機漢堡按鈕 */
-    .menu-toggle{
-        display:block;
-    }
-
-    /* 手機選單 */
-    .nav-menu{
-        position:absolute;
-        top:100%;
-        left:0;
-        width:100%;
-        background:white;
-        display:none;
-        flex-direction:column;
-        gap:0;
-        box-shadow:0 5px 15px rgba(0,0,0,.08);
-    }
-
-    .nav-menu.active{
-        display:flex;
-    }
-
-    .nav-menu li{
-        width:100%;
-        text-align:center;
-        border-bottom:1px solid #eee;
-    }
-
-    .nav-menu a{
-        display:block;
-        padding:16px;
-        font-size:17px;
-    }
-
-
-    /* =========================
-       首頁
-    ========================= */
-
-    .hero{
-        min-height:100vh;
-        padding:20px;
-        background-position:center;
-    }
-
-    .hero h1{
-        font-size:42px;
-        line-height:1.4;
-        margin-bottom:15px;
-    }
-
-    .hero p{
-        font-size:17px;
-        line-height:1.8;
-        margin-bottom:30px;
-    }
-
-    .btn{
-        padding:14px 30px;
-        font-size:16px;
-    }
-
-
-    /* =========================
-       所有區塊
-    ========================= */
-
-    section{
-        padding:70px 20px;
-    }
-
-
-    /* =========================
-       標題
-    ========================= */
-
-    .title{
-        font-size:32px;
-        line-height:1.4;
-    }
-
-    .subtitle{
-        font-size:16px;
-        margin-bottom:40px;
-    }
-
-
-    /* =========================
-       救援故事
-    ========================= */
-
-    .story{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .story img{
-        width:100%;
-        border-radius:18px;
-    }
-
-    .story h2{
-        font-size:26px;
-        margin-bottom:10px;
-    }
-
-    .story p{
-        font-size:16px;
-    }
-
-
-    /* =========================
-       毛孩卡片
-    ========================= */
-
-    .cards{
-        grid-template-columns:1fr;
-        gap:25px;
-    }
-
-    .card{
-        border-radius:20px;
-    }
-
-    .card img{
-        height:230px;
-    }
-
-    .card h3{
-        font-size:22px;
-        padding:18px 20px 10px;
-    }
-
-    .card p{
-        font-size:15px;
-        padding:0 20px 20px;
-    }
-
-
-    /* =========================
-       救援成果
-    ========================= */
-
-    .stats{
-        display:grid;
-        grid-template-columns:1fr;
-        gap:35px;
-    }
-
-    .number{
-        font-size:48px;
-    }
-
-
-    /* =========================
-       捐款區
-    ========================= */
-
-    .donate{
-        margin:0 20px;
-        padding:50px 25px;
-        border-radius:25px;
-    }
-
-    .donate h2{
-        font-size:30px;
-        line-height:1.5;
-    }
-
-    .donate p{
-        font-size:16px;
-        line-height:1.8;
-    }
-
-
-    /* =========================
-       Footer
-    ========================= */
-
-    footer{
-        padding:35px 20px;
-        font-size:14px;
-    }
-
+/* 漢堡按鈕 */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
 }
-```
+
+/* 手機版 */
+@media (max-width: 768px) {
+
+    nav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: #333;
+        z-index: 1001;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    nav ul.active {
+        display: block;
+    }
+
+    nav ul li {
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+}
