@@ -234,26 +234,65 @@ transition:1s;
 opacity:1;
 transform:translateY(0);
 }
-
 /* RWD */
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#2e7d32;
+}
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:42px;
-}
+    .hero h1{
+        font-size:42px;
+    }
 
-.hero p{
-font-size:20px;
-}
+    .hero p{
+        font-size:20px;
+    }
 
-.story{
-grid-template-columns:1fr;
-}
+    .story{
+        grid-template-columns:1fr;
+    }
 
-nav ul{
-display:none;
-}
+    /* 顯示漢堡 */
+    .menu-toggle{
+        display:block;
+    }
+
+    /* 手機選單預設隱藏 */
+    nav ul{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        gap:0;
+        padding:10px 0;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    /* 按下漢堡後顯示 */
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+        padding:10px 0;
+    }
+
+    nav a{
+        display:block;
+        padding:8px;
+    }
 
 }
 
