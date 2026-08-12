@@ -181,6 +181,20 @@ font-size:60px;
 font-weight:900;
 color:#2e7d32;
 }
+/* 聯絡我們 */
+
+#contact{
+text-align:center;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact p{
+margin:15px 0;
+font-size:18px;
+}
 
 /* 捐款 */
 
