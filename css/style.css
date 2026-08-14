@@ -184,16 +184,19 @@ color:#2e7d32;
 /* 聯絡我們 */
 
 #contact{
-text-align:center;
+    text-align:center;
 }
 
 .contact{
-text-align:center;
+    width:100%;
+    max-width:800px;
+    margin:0 auto;
+    text-align:center;
 }
 
 .contact p{
-margin:15px 0;
-font-size:18px;
+    margin:15px 0;
+    font-size:18px;
 }
 
 /* 捐款 */
