@@ -1,61 +1,60 @@
 # my-website
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>   告訴瀏覽器這是一個 HTML5 網頁。
+<html lang="zh-Hant">  整個網頁開始，語言設定為繁體中文。
+<head>                 放網站資訊，例如標題、CSS、字型等。
+<meta charset="UTF-8">  設定文字編碼為 UTF-8，避免中文亂碼。  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">手機、平板、電腦都能正常顯示。 
 
-<title>台灣流浪動物森林之家尊生會</title>
+<title>流浪動物森林之家</title>   顯示在瀏覽器分頁名稱。
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet"> link → 連結外部資源,href → 資源網址,Noto Sans TC → 繁體中文字型,
+wght → 字體粗細,300~900 → 細到粗,stylesheet → 當 CSS 樣式使用
+<style>  開始寫 CSS 樣式的地方
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Noto Sans TC',sans-serif;
+margin:0;   外邊距設定為 0,移除瀏覽器預設留出的空白距離。
+padding:0;  內邊距設定為 0,移除元素內容與邊框之間的預設空間。
+box-sizing:border-box;  使用邊框盒模型,設定元素寬度和高度時，會把 padding 和 border 算進去。
+font-family:'Noto Sans TC',sans-serif; 設定文字字型為 Noto Sans TC，如果沒有則使用無襯線字型。網站全部文字優先使用「思源黑體繁體中文」。
 }
 
-html{
-scroll-behavior:smooth;
+html{    對整個網頁設定效果。
+scroll-behavior:smooth;  設定網頁捲動時使用平滑滑動效果。
 }
 
-body{
-background:#fafaf7;
-color:#333;
-line-height:1.8;
+body{          設定整個網站的基本外觀
+background:#fafaf7;   網頁背景使用淡米白色。
+color:#333;   文字顏色設定為 #333
+line-height:1.8;    行高設定為 1.8 倍
 }
 
 /* 導覽列 */
 
-nav{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(255,255,255,.9);
-backdrop-filter:blur(12px);
-box-shadow:0 3px 12px rgba(0,0,0,.05);
-z-index:999;
+nav{          設定網站上方選單的外觀。
+position:fixed;   導覽列固定在畫面上，不會隨頁面滾動消失。
+top:0;            貼齊瀏覽器最上方。
+left:0;           從畫面最左側開始。
+width:100%;       導覽列佔滿整個螢幕寬度。
+padding:20px 8%;  上下留 20px 空間，左右留 8% 空間。
+display:flex;     讓導覽列裡的項目可以彈性排列。
+justify-content:space-between;   左邊 Logo、右邊選單，中間自動留空。內容兩端對齊
+align-items:center;              讓文字和圖片在同一水平線。
+background:rgba(255,255,255,.9);  設定半透明白色背景,白色背景透明度 90%。
+backdrop-filter:blur(12px);       背景模糊效果,導覽列後面的內容會有毛玻璃效果。
+box-shadow:0 3px 12px rgba(0,0,0,.05);    導覽列下方產生淡淡陰影，增加立體感。
+z-index:999;                               讓導覽列保持在最上層，不被其他內容蓋住。
 }
 
-.logo{
-font-size:22px;
-font-weight:900;
-color:#2e7d32;
-white-space:nowrap;
+.logo{                          套用到 HTML 裡有 class="logo" 的文字。
+font-size:26px;                 字體大小設定為 26 像素,Logo 文字變大。
+font-weight:900;                字體粗細設定為 900,使用非常粗的字體，讓 Logo 更醒目。
+color:#2e7d32;                  文字顏色設定為 #2e7d32
 }
 
 nav ul{
 display:flex;
 list-style:none;
-gap:20px;
+gap:30px;
 }
 
 nav a{
@@ -80,15 +79,15 @@ text-align:center;
 padding:20px;
 background:
 linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-url("images/702089957_1422877916540989_4630790346450281029_n.jpg") center/cover;
+url("images/hero.jpg") center/cover;
 color:white;
 }
 
 .hero h1{
-font-size:clamp(42px, 5vw, 64px);
+font-size:70px;
 margin-bottom:20px;
-line-height:1.4;
 }
+
 .hero p{
 font-size:24px;
 margin-bottom:40px;
@@ -235,91 +234,26 @@ transition:1s;
 opacity:1;
 transform:translateY(0);
 }
-/* RWD */
 
-.menu-toggle{
-    display:none;
-    background:none;
-    border:none;
-    font-size:32px;
-    cursor:pointer;
-    color:#2e7d32;
-}
+/* RWD */
 
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:20px;
-    }
-    @media (max-width:1100px) and (min-width:769px){ 
- 
-    nav{ 
-        padding:18px 4%; 
-    } 
- 
-    .logo{ 
-        font-size:20px; 
-    } 
- 
-    nav ul{ 
-        gap:15px; 
-    } 
- 
-    nav a{ 
-        font-size:14px; 
-    } 
- 
-    .hero h1{ 
-        font-size:55px; 
-    } 
- 
-    section{ 
-        padding:100px 6%; 
-    } 
+.hero h1{
+font-size:42px;
 }
 
-    .story{
-        grid-template-columns:1fr;
-    }
+.hero p{
+font-size:20px;
+}
 
-    /* 顯示漢堡 */
-    .menu-toggle{
-        display:block;
-    }
+.story{
+grid-template-columns:1fr;
+}
 
-    /* 手機選單預設隱藏 */
-    nav ul{
-        display:none;
-        position:absolute;
-        top:100%;
-        left:0;
-        width:100%;
-        background:white;
-        flex-direction:column;
-        gap:0;
-        padding:10px 0;
-        box-shadow:0 5px 15px rgba(0,0,0,.1);
-    }
-
-    /* 按下漢堡後顯示 */
-    nav ul.active{
-        display:flex;
-    }
-
-    nav ul li{
-        width:100%;
-        text-align:center;
-        padding:10px 0;
-    }
-
-    nav a{
-        display:block;
-        padding:8px;
-    }
+nav ul{
+display:none;
+}
 
 }
 
@@ -330,62 +264,58 @@ transform:translateY(0);
 <body>
 
 <nav>
-    <div class="logo">🐶台灣流浪動物森林之家尊生會</div>
 
-    <button class="menu-toggle" onclick="toggleMenu()">
-        ☰
-    </button>
+<div class="logo">🐶 流浪動物森林之家</div>
 
-    <ul id="nav-menu">
-        <li><a href="#home">首頁</a></li>
-        <li><a href="#about">關於我們</a></li>
-        <li><a href="#animals">最新消息</a></li>
-        <li><a href="#support">領養&助養</a></li>
-        <li><a href="#contact">聯絡資訊</a></li>
-    </ul>
+<ul>
+
+<li><a href="#home">首頁</a></li>
+
+<li><a href="#story">救援</a></li>
+
+<li><a href="#adoption">認養</a></li>
+
+<li><a href="#">捐款</a></li>
+
+</ul>
+
+</nav>
 
 <header id="home" class="hero">
 
-    <img src="119064477_3940818379267316_3820025837781985367".jpg" alt="">
+<div>
+
+<h1>每一個生命<br>都值得被愛</h1>
+
+<p>讓流浪，不再是牠們唯一的選擇。</p>
+
+<a href="#" class="btn">立即支持</a>
+
+</div>
 
 </header>
 
-
 <section id="story" class="reveal">
 
-
-
-     <div class="hero-content">
-
-        <h2>我們相信</h2>
-
-        <p class="slogan">
-            每一次救援，都是生命重新開始。
-        </p>
-
-        <p class="highlight">
-            ～給牠一個家～
-        </p>
-
-        <p class="description">
-            我們投入流浪動物救援、醫療、送養與照護，
-            希望每一隻毛孩都能重新擁有幸福。
-        </p>
-
-        <div class="hero-images">
-            <img src="images/42727.jpg" alt="午後吉祥">
-            <img src="images/42728.jpg" alt="午後吉祥">
-            <img src="images/42729.jpg" alt="午後吉祥">
-        </div>
-
-
-
+<h2 class="title">我們相信</h2>
 
 <p class="subtitle">
 
+每一次救援，都是生命重新開始。
 
+</p>
 
+<div class="story">
 
+<img src="images/story.jpg">
+
+<div>
+
+<h2>給牠一個家</h2>
+
+<p>
+
+我們投入流浪動物救援、醫療、送養與照護，希望每一隻毛孩都能重新擁有幸福。
 
 </p>
 
@@ -440,20 +370,37 @@ transform:translateY(0);
 
 </section>
 
-<section id="contact">
+<section id="rescue" class="reveal">
 
-    <h2 class="title">聯絡我們</h2>
+<h2 class="title">救援成果</h2>
 
-    <p class="subtitle">
-        如果您想認養、捐款或成為志工，歡迎與我們聯絡。
-    </p>
+<div class="stats">
 
-    <div class="contact">
-        <p>📧 Email：foresthome@example.com</p>
-        <p>   官方Line:@660zbsgw
-        <p>📞 電話：0965424388</p>
-        <p>📍 地址：台北市內湖區康樂街136巷15弄7號(辦事處)</p>
-    </div>
+<div class="stat">
+
+<div class="number">1000+</div>
+
+<p>救援毛孩</p>
+
+</div>
+
+<div class="stat">
+
+<div class="number">850+</div>
+
+<p>成功送養</p>
+
+</div>
+
+<div class="stat">
+
+<div class="number">300+</div>
+
+<p>愛心志工</p>
+
+</div>
+
+</div>
 
 </section>
 
@@ -469,32 +416,29 @@ transform:translateY(0);
 
 <footer>
 
-© 2026台灣流浪動物森林之家尊生會
+© 2026 流浪動物森林之家
 
 </footer>
 
 <script>
 
-const reveal = document.querySelectorAll(".reveal");
+const reveal=document.querySelectorAll(".reveal");
 
-function revealOnScroll() {
-  reveal.forEach(item => {
-    let top = item.getBoundingClientRect().top;
+window.addEventListener("scroll",()=>{
 
-    if (top < window.innerHeight - 100) {
-      item.classList.add("active");
-    }
-  });
+reveal.forEach(item=>{
+
+let top=item.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+item.classList.add("active");
+
 }
 
-window.addEventListener("scroll", revealOnScroll);
+});
 
-revealOnScroll();
-
-
-function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("active");
-}
+});
 
 </script>
 
