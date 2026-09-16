@@ -1,19 +1,129 @@
  # my-website
- :root {
-  --main-color: #2563eb;
-}
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小日子咖啡店</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.btn {
-  background-color: var(--main-color);
-  color: white;
+<body>
 
+  <header class="header">
+    <div class="container nav">
+      <h1 class="logo">小日子咖啡店</h1>
 
-  # my-website
-  :root {
-  --main-color: #166534;
-}
+      <nav>
+        <a href="#about">介紹</a>
+        <a href="#menu">菜單</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
 
-.btn {
-  background-color: var(--main-color);
-  color: white;
-}
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="tag">GOOD COFFEE, GOOD DAY</p>
+
+          <h2>每天都值得一杯好咖啡</h2>
+
+          <p class="description">
+            提供手沖咖啡、甜點與舒適的空間，
+            歡迎來小日子坐坐。
+          </p>
+
+          <a href="#contact" class="btn">
+            立即預約
+          </a>
+        </div>
+
+        <div class="hero-card">
+          <span>☕</span>
+          <h3>Today's Coffee</h3>
+          <p>手沖咖啡 $150</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="section-label">ABOUT US</p>
+
+        <h2 class="section-title">店家介紹</h2>
+
+        <div class="about-box">
+          <p>
+            小日子是一間位於城市角落的咖啡店，
+            希望提供一個讓大家放慢腳步的地方。
+          </p>
+
+          <p>
+            不論是工作、閱讀，或只是想喝杯咖啡，
+            都歡迎來這裡享受屬於自己的小日子。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section menu-section">
+      <div class="container">
+        <p class="section-label">MENU</p>
+
+        <h2 class="section-title">熱門菜單</h2>
+
+        <div class="menu-grid">
+
+          <div class="menu-card">
+            <h3>美式咖啡</h3>
+            <p>香醇濃郁的經典咖啡</p>
+            <strong>$120</strong>
+          </div>
+
+          <div class="menu-card">
+            <h3>拿鐵咖啡</h3>
+            <p>濃郁咖啡搭配柔順奶泡</p>
+            <strong>$150</strong>
+          </div>
+
+          <div class="menu-card">
+            <h3>提拉米蘇</h3>
+            <p>咖啡香氣與奶油的完美搭配</p>
+            <strong>$180</strong>
+          </div>
+
+        </div>
+
+        <a href="#" class="menu-btn">
+          查看菜單
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <p class="section-label">CONTACT</p>
+
+        <h2 class="section-title">歡迎來找我們</h2>
+
+        <p>📍 台北市咖啡街 100 號</p>
+        <p>📞 02-1234-5678</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 小日子咖啡店</p>
+  </footer>
+
+</body>
+</html>
