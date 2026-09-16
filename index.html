@@ -1,7 +1,6 @@
 ```html
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,163 +8,349 @@
   <title>小日子咖啡店</title>
 
   <style>
-
-    /* =====================
-       基本設定
-    ===================== */
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    :root {
-      --main-color: #7b4f35;
-      --dark-color: #4b2e20;
-      --light-color: red;
-      --text-color: #333333;
-      --white: #ffffff;
-    }
-
     body {
-      font-family:
-        "Noto Sans TC",
-        Arial,
-        sans-serif;
-
-      color: var(--text-color);
-      line-height: 1.7;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
       background: red;
+      color: white;
+      line-height: 1.6;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-
-    /* =====================
-       Header
-    ===================== */
-
+    /* 導覽列 */
     .header {
       background: red;
-      border-bottom: 1px solid #cc0000;
-    }
-
-    .nav {
-      min-height: 70px;
-
+      padding: 20px 8%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
+      font-size: 28px;
+      font-weight: bold;
       color: white;
     }
 
-    nav {
+    .nav {
       display: flex;
       gap: 25px;
+      list-style: none;
     }
 
-    nav a {
+    .nav a {
       color: white;
       text-decoration: none;
+      font-weight: bold;
     }
 
-    nav a:hover {
-      color: #ffd6d6;
-    }
-
-
-    /* =====================
-       Hero
-    ===================== */
-
+    /* 首頁 */
     .hero {
+      min-height: 500px;
       background: red;
-      padding: 100px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
     }
 
     .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 60px;
-      align-items: center;
+      max-width: 700px;
     }
 
-    .tag {
-      color: white;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .hero h2 {
-      color: white;
-      font-size: 48px;
-      line-height: 1.3;
+    .hero h1 {
+      font-size: 52px;
       margin-bottom: 20px;
     }
 
-    .description {
-      color: white;
+    .hero p {
+      font-size: 20px;
       margin-bottom: 30px;
     }
 
+    /* 預約按鈕 */
     .btn {
       display: inline-block;
-
-      background: white;
-      color: red;
-
-      padding: 12px 25px;
+      background: #660000;
+      color: white;
+      padding: 14px 30px;
       border-radius: 8px;
-
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     .btn:hover {
-      background: #ffe5e5;
+      background: #440000;
+      transform: translateY(-2px);
     }
 
-
-    /* =====================
-       Hero Card
-    ===================== */
-
-    .hero-card {
-      background: white;
-
-      padding: 50px 30px;
-
-      border-radius: 20px;
-
+    /* 共用區塊 */
+    .section {
+      padding: 90px 20px;
+      background: red;
       text-align: center;
-
-      box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.15);
     }
 
-    .hero-card span {
-      font-size: 60px;
+    .section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
     }
 
-    .hero-card h3 {
+    /* 關於我們 */
+    .about-box {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      color: #333;
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .about-box h3 {
+      color: #660000;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    /* 菜單 */
+    .menu-section {
+      background: red;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .menu-section h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .menu-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      color: #333;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .menu-card h3 {
+      color: #660000;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #990000;
+      margin-top: 15px;
+    }
+
+    /* 菜單按鈕 */
+    .menu-btn {
+      margin-top: 40px;
+    }
+
+    /* 聯絡資訊 */
+    .contact {
+      background: red;
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      color: #333;
+      padding: 40px;
+      border-radius: 15px;
+    }
+
+    .contact-box p {
       margin: 10px 0;
     }
 
-
-    /* =====================
-       Section
-    ===================== */
-
-    .section {
-      padding: 90px 0;
-      background: red;
+    /* Footer */
+    .footer {
+      background: #660000;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
     }
+
+    /* 手機版 */
+    @media (max-width: 768px) {
+
+      .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .section,
+      .menu-section,
+      .contact {
+        padding: 60px 20px;
+      }
+
+      .section h2,
+      .menu-section h2 {
+        font-size: 30px;
+      }
+
+      .menu-container {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 導覽列 -->
+  <header class="header">
+    <div class="logo">小日子咖啡店</div>
+
+    <ul class="nav">
+      <li><a href="#home">首頁</a></li>
+      <li><a href="#about">關於我們</a></li>
+      <li><a href="#menu">菜單</a></li>
+      <li><a href="#contact">聯絡我們</a></li>
+    </ul>
+  </header>
+
+
+  <!-- 首頁 -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <h1>小日子咖啡店</h1>
+
+      <p>
+        一杯咖啡，一段屬於自己的小日子。
+      </p>
+
+      <!-- 立即預約 -->
+      <a href="#contact" class="btn">立即預約</a>
+
+    </div>
+  </section>
+
+
+  <!-- 關於我們 -->
+  <section class="section" id="about">
+
+    <h2>關於小日子</h2>
+
+    <div class="about-box">
+
+      <h3>關於小日子</h3>
+
+      <p>
+        小日子是一間溫暖的小咖啡店，
+        希望提供一個讓大家放慢腳步、享受咖啡與生活的地方。
+      </p>
+
+      <p>
+        不論是一個人閱讀、和朋友聊天，
+        或只是想安靜喝杯咖啡，都歡迎來到小日子。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- 菜單 -->
+  <section class="menu-section" id="menu">
+
+    <h2>熱門菜單</h2>
+
+    <div class="menu-container">
+
+      <div class="menu-card">
+        <h3>拿鐵咖啡</h3>
+        <p>濃郁咖啡搭配香醇牛奶。</p>
+        <div class="price">$120</div>
+      </div>
+
+      <div class="menu-card">
+        <h3>美式咖啡</h3>
+        <p>簡單純粹的咖啡風味。</p>
+        <div class="price">$100</div>
+      </div>
+
+      <div class="menu-card">
+        <h3>焦糖咖啡</h3>
+        <p>咖啡與焦糖的甜蜜搭配。</p>
+        <div class="price">$140</div>
+      </div>
+
+    </div>
+
+    <!-- 查看完整菜單 -->
+    <div class="menu-btn">
+      <a href="#" class="btn">查看完整菜單</a>
+    </div>
+
+  </section>
+
+
+  <!-- 聯絡我們 -->
+  <section class="contact" id="contact">
+
+    <h2>聯絡我們</h2>
+
+    <div class="contact-box">
+
+      <p><strong>地址：</strong>台北市幸福路 100 號</p>
+
+      <p><strong>電話：</strong>02-1234-5678</p>
+
+      <p><strong>營業時間：</strong>09:00 - 20:00</p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 小日子咖啡店｜All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
 ```
