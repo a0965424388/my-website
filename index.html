@@ -1,12 +1,47 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<!DOCTYPE HTML>
+<html lang="zh-Hant">
+
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一個網站</title>
-  </head>
-  <body>
-    <h1>我是xxx</h1>
-    <p>這是我第一個網站</p>
-  </body>
+    <title>哲域設計</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .menu-button {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        #menu.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="menu-button" onclick="openMenu()">☰</button>
+
+    <div id="menu">
+        <p>首頁</p>
+        <p>關於我們</p>
+        <p>作品</p>
+        <p>聯絡我們</p>
+    </div>
+
+    <h1>我的第一個網站設計</h1>
+    <p>大家好</p>
+
+    <script>
+        function openMenu() {
+            document.getElementById("menu").classList.toggle("show");
+        }
+    </script>
+
+</body>
+
 </html>
