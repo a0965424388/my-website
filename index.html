@@ -1,29 +1,59 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="zh-Hant">
     <head>
-    <meta charset="UTF-8">
-    <title>哲域設計</title>
+        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+    <title>哲域設計</title>
     <style>
-        /* 手機螢幕 */
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-            }
+
+         /* 三條線漢堡 */
+        .hamburger {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background: #000;
+            margin: 6px 0;
+        }
+        /* 手機版 */
+        @media (max-width: 768px) {
 
             h1 {
-                font-size: 24px;
-            }
-
-            .menu-button {
                 font-size: 28px;
             }
+
         }
-    </style>
+        .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+    </style>   
     </head>
     <body>
-        <h1>我是</h1>
+         <h1>哲域設計</h1>
+    <p>這是一個中文網站</p>
+     <div class="hamburger" onclick="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+          <script>
+    function openMenu() {
+        document.querySelector(".hamburger").classList.toggle("active");
+    }
+    </script>
+
+
     </body>
-    
 </html>
