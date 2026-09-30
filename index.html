@@ -1,63 +1,94 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-Hant">
+    
     <head>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>哲域設計</title>
-    <style>
-
-         /* 三條線漢堡 */
-        .hamburger {
-            width: 30px;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>哲域設計</title>
+        <style>
+              /* 漢堡按鈕 */
+        .menu-btn {
+            width: 45px;
+            height: 45px;
+            border: none;
+            background: transparent;
             cursor: pointer;
-             /* 放到右上角 */
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
         }
 
-        .hamburger span {
+        .menu-btn span {
             display: block;
+            width: 28px;
             height: 3px;
-            background: #000;
-            margin: 6px 0;
+            background-color: #333;
+            border-radius: 3px;
+            transition: 0.3s;
         }
-        /* 手機版 */
-        @media (max-width: 768px) {
 
-            h1 {
-                font-size: 28px;
-            }
-
+        /* 選單 */
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 10px 0;
+            width: 180px;
         }
-        .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-}
 
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
+        .menu.active {
+            display: block;
+        }
 
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
+        .menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+        }
 
-    </style>   
+        .menu a:hover {
+            background-color: #f2f2f2;
+        }
+
+            
+        </style>
     </head>
     <body>
-         <h1>哲域設計</h1>
-    <p>這是一個中文網站</p>
-     <div class="hamburger" onclick="openMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-          <script>
-    function openMenu() {
-        document.querySelector(".hamburger").classList.toggle("active");
-    }
+        <!-- 三條線按鈕 -->
+    <button class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- 選單內容 -->
+    <nav class="menu" id="menu">
+        <a href="#">首頁</a>
+        <a href="#">關於我們</a>
+        <a href="#">產品介紹</a>
+        <a href="#">聯絡我們</a>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("active");
+        }
     </script>
 
-
+        
     </body>
+
+
+
+
+
+
+    
 </html>
