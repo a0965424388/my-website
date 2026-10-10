@@ -1,116 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>流浪動物森林家</title>
+  <title>紳士理髮 Barber Studio</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      color: #333333;
     }
 
     header {
-      background: #5C4033;
+      background-color: #333333;
       color: white;
-      padding: 30px;
+      padding: 30px 16px;
       text-align: center;
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 36px;
     }
-    @media (max-width: 768px) {
-  h1 {
-    font-size: 32px;
-  }
-  }
 
     .content {
-      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      padding: 24px 16px;
       text-align: center;
     }
 
-.content img {
-  max-width: 100%;
-  height: auto;
-}
-
-    .content p {
-      font-size: 24px;
+    .content img {
+      width: 700px;
+      height: auto;
     }
 
-  ./* 按鈕基本樣式 */
-btn {
-  display: inline-block;
-  width: 220px;
-  padding: 14px 20px;
+    .content p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
 
-  background-color: #E53935;
-  color: #FFFFFF;
-
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-
-  border-radius: 6px;
-  border: none;
-  box-sizing: border-box;
-
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-/* 滑鼠移上去的效果 */
-.btn:hover {
-  background-color: #C62828;
-  transform: translateY(-2px);
-}
-
-    /* 手機版 RWD */
-@media (max-width: 768px) {
-
-  .btn {
-    width: 80%;
-    max-width: 280px;
-    padding: 14px 20px;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-}
-
-/* 小螢幕手機 */
-@media (max-width: 380px) {
-
-  .btn {
-    width: 100%;
-    font-size: 15px;
-  }
-
-}
+    .btn {
+      display: inline-block;
+      background-color: #666666;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+    }
   </style>
 </head>
 
 <body>
-
   <header>
-    <h1>流浪動物森林之家</h1>
+    <h1>男士理髮服務</h1>
   </header>
 
-  <section class="content">
+  <main>
+    <section class="content">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+        alt="男士理髮店">
 
-    <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16"
-         alt="狗狗">
+      <h2>專業剪髮服務</h2>
 
-    <p>
-      我們希望幫助每一隻流浪動物找到溫暖的家。
-    </p>
+      <p>
+        提供男士剪髮與造型服務，
+        讓你展現最佳形象。
+      </p>
 
-    <a href="#" class="btn">立即了解</a>
+      <a href="#contact" class="btn">預約服務</a>
+    </section>
 
-  </section>
-
+    <section id="contact" class="content">
+      <h2>預約與聯絡</h2>
+      <p>歡迎預約，打造專屬你的髮型。</p>
+    </section>
+  </main>
 </body>
 </html>
