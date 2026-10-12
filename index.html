@@ -7,48 +7,89 @@
   <title>紳士理髮 Barber Studio</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #333333;
-    }
+  /* 1. 統一所有元素的尺寸計算方式 */
+  * {
+    box-sizing: border-box;
+  }
 
-    header {
-      background-color: #333333;
-      color: white;
-      padding: 30px 16px;
-      text-align: center;
-    }
+  /* 2. 網頁基本設定 */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333333;
+  }
 
+  /* 3. 頂部標題區 */
+  header {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  /* 4. 內容區域 */
+  .content {
+    max-width: 800px;
+    margin: auto;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  /* 5. 圖片響應式設定 */
+  .content img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* 6. 內文字體 */
+  .content p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  /* 7. 預約按鈕 */
+  .btn {
+  display: inline-block;
+  background-color: #5C4033;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #3E2B22;
+}
+
+  /* 8. 手機版專用設定 */
+  @media (max-width: 600px) {
     h1 {
-      font-size: 36px;
+      font-size: 28px;
+      margin: 0;
     }
 
     .content {
-      max-width: 800px;
-      margin: auto;
-      padding: 24px 16px;
-      text-align: center;
-    }
-
-    .content img {
-      width: 700px;
-      height: auto;
+      padding: 20px 16px;
     }
 
     .content p {
-      font-size: 20px;
-      line-height: 1.8;
+      font-size: 16px;
     }
 
     .btn {
-      display: inline-block;
-      background-color: #666666;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
+      padding: 14px 24px;
     }
-  </style>
+  }
+</style>
 </head>
 
 <body>
