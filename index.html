@@ -4,119 +4,333 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>紳士理髮 Barber Studio</title>
+  <title>EAST FISHING｜門市介紹</title>
 
   <style>
-  /* 1. 統一所有元素的尺寸計算方式 */
-  * {
-    box-sizing: border-box;
-  }
+    /* 全站設定 */
+    * {
+      box-sizing: border-box;
+    }
 
-  /* 2. 網頁基本設定 */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333333;
-  }
-
-  /* 3. 頂部標題區 */
-  header {
-    width: 100%;
-    background-color: #333333;
-    color: white;
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 36px;
-  }
-
-  /* 4. 內容區域 */
-  .content {
-    max-width: 800px;
-    margin: auto;
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-  /* 5. 圖片響應式設定 */
-  .content img {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  /* 6. 內文字體 */
-  .content p {
-    font-size: 20px;
-    line-height: 1.8;
-  }
-
-  /* 7. 預約按鈕 */
-  .btn {
-  display: inline-block;
-  background-color: #5C4033;
-  color: white;
-  padding: 14px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #3E2B22;
-}
-
-  /* 8. 手機版專用設定 */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 28px;
+    body {
       margin: 0;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      color: #303938;
+      background: #f5f6f3;
+      line-height: 1.7;
     }
 
-    .content {
-      padding: 20px 16px;
+    a {
+      color: inherit;
     }
 
-    .content p {
-      font-size: 16px;
+    /* 頂部導覽列 */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #222b2d;
+      color: white;
     }
 
-    .btn {
-      padding: 14px 24px;
+    .logo {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 1px;
     }
-  }
-</style>
+
+    .logo small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* 漢堡按鈕 */
+    .menu-toggle {
+      width: 44px;
+      height: 44px;
+      padding: 8px;
+      border: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 27px;
+      height: 3px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    /* 下拉選單 */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 8px 20px;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 14px 4px;
+      text-decoration: none;
+      border-bottom: 1px solid #e4e8e5;
+    }
+
+    /* 主內容 */
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 24px 16px;
+    }
+
+    .eyebrow {
+      color: #278d91;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      margin: 5px 0 18px;
+      font-size: 28px;
+    }
+
+    /* 門市照片 */
+    .store-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #dce6e2;
+    }
+
+    /* 門市資訊卡片 */
+    .info-card {
+      margin-top: 16px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+    }
+
+    .info-item h2 {
+      margin: 0 0 5px;
+      font-size: 15px;
+      color: #68736f;
+    }
+
+    .info-item p {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .phone-link {
+      color: #278d91;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .call-button {
+      display: block;
+      padding: 13px;
+      text-align: center;
+      color: white;
+      background: #278d91;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    /* 商品分類 */
+    .products {
+      margin-top: 30px;
+    }
+
+    .products h2 {
+      font-size: 21px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .product-item {
+      padding: 18px 8px;
+      background: white;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    /* 頁尾 */
+    .footer {
+      padding: 24px 16px;
+      background: #222b2d;
+      color: white;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* 平板與電腦版 */
+    @media (min-width: 768px) {
+      .navbar {
+        padding: 16px 5%;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        padding: 0 5%;
+      }
+
+      .mobile-menu a {
+        border-bottom: none;
+      }
+
+      .store-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .info-card {
+        margin-top: 0;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-    <h1>男士理髮服務</h1>
+
+  <header class="navbar">
+    <h2 class="logo">
+      EAST FISHING
+      <small>FISHING TACKLE</small>
+    </h2>
+
+    <button class="menu-toggle"
+            aria-label="開啟選單"
+            aria-expanded="false"
+            aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
-  <main>
-    <section class="content">
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#store">門市資訊</a>
+    <a href="#products">商品分類</a>
+    <a href="#contact">聯絡我們</a>
+  </nav>
+
+  <main class="container" id="store">
+    <div class="eyebrow">STORE / 門市資訊</div>
+    <h1>台北東湖店</h1>
+
+    <div class="store-layout">
+
       <img
-        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
-        alt="男士理髮店">
+        class="store-image"
+        src="store.jpg"
+        alt="釣具門市外觀">
 
-      <h2>專業剪髮服務</h2>
+      <section class="info-card" id="contact">
 
-      <p>
-        提供男士剪髮與造型服務，
-        讓你展現最佳形象。
-      </p>
+        <div class="info-item">
+          <h2>門市地址</h2>
+          <p>台北市內湖區康樂街85巷3號</p>
+        </div>
 
-      <a href="#contact" class="btn">預約服務</a>
-    </section>
+        <div class="info-item">
+          <h2>聯絡電話</h2>
+          <p>
+            <a class="phone-link" href="tel:0226522151">
+              02-2652-2151
+            </a>
+          </p>
+        </div>
 
-    <section id="contact" class="content">
-      <h2>預約與聯絡</h2>
-      <p>歡迎預約，打造專屬你的髮型。</p>
+        <div class="info-item">
+          <h2>營業時間</h2>
+          <p>請以店家最新公告為準</p>
+        </div>
+
+        <a class="call-button" href="tel:0226522151">
+          立即撥打電話
+        </a>
+
+      </section>
+    </div>
+
+    <section class="products" id="products">
+      <h2>商品分類</h2>
+
+      <div class="product-grid">
+        <div class="product-item">釣竿</div>
+        <div class="product-item">捲線器</div>
+        <div class="product-item">魚鉤配件</div>
+        <div class="product-item">釣魚用品</div>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>釣具門市｜RWD 練習作品</p>
+    <p>非官方網站，僅供版型練習</p>
+  </footer>
+
+  <script>
+    const menuButton =
+      document.querySelector(".menu-toggle");
+
+    const mobileMenu =
+      document.querySelector(".mobile-menu");
+
+    menuButton.addEventListener("click", function () {
+      const isOpen =
+        mobileMenu.classList.toggle("active");
+
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "關閉選單" : "開啟選單"
+      );
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileMenu.classList.remove("active");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "開啟選單");
+      });
+    });
+  </script>
+
 </body>
 </html>
