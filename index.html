@@ -304,14 +304,48 @@ font-size:40px;
 
 font-size:20px;
 
-}
-
-nav ul{
-
-display:none;
 
 }
+  /* 漢堡選單按鈕 */
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  color: #2e7d32;
+  font-size: 32px;
+  cursor: pointer;
+}
 
+/* 手機版 */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 5%;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,.08);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
 }
 
 </style>
@@ -324,18 +358,21 @@ display:none;
 
 <div class="logo">🐶 台灣流浪動物森林之家尊生會</div>
 
-<ul>
-
-<li><a href="#">首頁</a></li>
-
-<li><a href="#">救援故事</a></li>
-
-<li><a href="#">宗旨</a></li>
-
-<li><a href="#">聯絡我們</a></li>
-
+<ul id="navMenu">
+  <li><a href="#">首頁</a></li>
+  <li><a href="#">救援故事</a></li>
+  <li><a href="#">最新消息</a></li>
+  <li><a href="#">宗旨</a></li>
+  <li><a href="#">聯絡我們</a></li>
 </ul>
-
+  
+<button class="menu-toggle"
+        id="menuToggle"
+        aria-label="開啟導覽選單"
+        aria-expanded="false"
+        aria-controls="navMenu">
+  ☰
+</button>
 </nav>
 
 <header class="hero">
