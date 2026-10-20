@@ -77,37 +77,69 @@ font-weight:700;
   color: white;
   padding: 20px;
 }
-.hero h1{
-font-size:58px;
-margin-bottom:20px;
+
+/* Hero 首頁封面 */
+
+.hero {
+  width: 100%;
+  min-height: 600px;
+  height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("./圖片/119064477_3940818379267316_3820025837781985367_n.jpg");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  padding: 100px 20px 30px;
 }
 
-.hero p{
-font-size:24px;
-margin-bottom:35px;
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.btn{
-
-display:inline-block;
-
-padding:18px 40px;
-
-background:#ff8f00;
-
-color:white;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-size:22px;
-
-font-weight:bold;
-
-transition:.3s;
-
+.hero p {
+  font-size: 24px;
+  margin-bottom: 35px;
 }
+
+/* 手機版封面 */
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 600px;
+    padding: 120px 20px 50px;
+    background-position: center center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .hero .btn {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+
 
 .btn:hover{
 
