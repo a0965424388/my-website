@@ -286,27 +286,8 @@ padding:40px;
 
 }
 
-@media(max-width:768px){
 
-.story{
-
-grid-template-columns:1fr;
-
-}
-
-.hero h1{
-
-font-size:40px;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-
-}
-  /* 漢堡選單按鈕 */
+/* 漢堡選單按鈕：電腦版預設隱藏 */
 .menu-toggle {
   display: none;
   border: none;
@@ -324,6 +305,18 @@ font-size:20px;
 
   .logo {
     font-size: 18px;
+  }
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 20px;
   }
 
   .menu-toggle {
@@ -547,6 +540,31 @@ item.classList.add("active");
 
 });
 
+</script>
+
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("show");
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "關閉導覽選單" : "開啟導覽選單"
+  );
+});
+
+navMenu.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "開啟導覽選單");
+  });
+});
 </script>
 
 </body>
