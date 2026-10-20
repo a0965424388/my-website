@@ -298,25 +298,42 @@ padding:40px;
 
 /* 手機版 */
 @media (max-width: 768px) {
-  nav {
-    padding: 15px 5%;
+  .hero {
+    width: 100%;
+    min-height: 500px;
+    height: auto;
+    padding: 100px 20px 50px;
+    overflow: hidden;
+    background-position: center;
   }
 
-  .logo {
-    font-size: 18px;
-  }
-
-  .story {
-    grid-template-columns: 1fr;
+  .hero > div {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 
   .hero h1 {
-    font-size: 40px;
+    width: 100%;
+    font-size: 32px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
   }
 
   .hero p {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
   }
+
+  .hero .btn {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+}
 
   .menu-toggle {
     display: block;
