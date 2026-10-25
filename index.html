@@ -1,824 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="台灣流浪動物森林之家尊生會，關注流浪動物救援、醫療、照護與認養，陪伴每一個生命找到溫暖的家。">
-
-  <meta name="theme-color" content="#ffffff">
-
-  <title>台灣流浪動物森林之家尊生會</title>
+  <title>紳士理髮 Barber Studio</title>
 
   <style>
-    /* =========================
-       全站基本設定
-    ========================= */
+  /* 1. 統一所有元素的尺寸計算方式 */
+  * {
+    box-sizing: border-box;
+  }
 
-    * {
+  /* 2. 網頁基本設定 */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333333;
+  }
+
+  /* 3. 頂部標題區 */
+  header {
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  /* 4. 內容區域 */
+  .content {
+    max-width: 800px;
+    margin: auto;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  /* 5. 圖片響應式設定 */
+  .content img {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* 6. 內文字體 */
+  .content p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  /* 7. 預約按鈕 */
+  .btn {
+  display: inline-block;
+  background-color: #5C4033;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #3E2B22;
+}
+
+  /* 8. 手機版專用設定 */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 28px;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+    .content {
+      padding: 20px 16px;
     }
 
-    body {
-      font-family: "Noto Sans TC", "Microsoft JhengHei",
-                   Arial, sans-serif;
-      background: #fafaf7;
-      color: #444;
-      line-height: 1.8;
-      overflow-wrap: break-word;
+    .content p {
+      font-size: 16px;
     }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    section {
-      padding: 90px 8%;
-      scroll-margin-top: 75px;
-    }
-
-    /* =========================
-       導覽列
-    ========================= */
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      min-height: 76px;
-      padding: 12px 5%;
-      background: rgba(255, 255, 255, 0.97);
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      z-index: 999;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: 900;
-      color: #3c7b3d;
-      text-decoration: none;
-      line-height: 1.5;
-    }
-
-    nav ul {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-
-    nav ul a {
-      display: block;
-      padding: 8px 0;
-      color: #555;
-      text-decoration: none;
-      font-weight: 700;
-      transition: color 0.3s;
-    }
-
-    nav ul a:hover {
-      color: #2e7d32;
-    }
-
-    .menu-toggle {
-      display: none;
-      border: none;
-      background: transparent;
-      color: #2e7d32;
-      font-size: 30px;
-      cursor: pointer;
-      padding: 4px 8px;
-      line-height: 1.3;
-    }
-
-    /* =========================
-       首頁封面 Hero
-    ========================= */
-
- 
-.hero {
-  min-height: 100vh;
-
-  background-image: url("images/119064477_3940818379267316_3820025837781985367_n.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #dff2d8;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: clamp(32px, 5vw, 58px);
-  line-height: 1.5;
-  margin-bottom: 20px;
-  text-shadow: none;
-}
-
-.hero p {
-  font-size: clamp(18px, 2.2vw, 24px);
-  margin-bottom: 35px;
-  text-shadow: none;
-}
-
-    /* =========================
-       按鈕
-    ========================= */
 
     .btn {
-      display: inline-block;
-      padding: 15px 36px;
-
-      background: #ff8f00;
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-
-      text-decoration: none;
-      font-size: 19px;
-      font-weight: 700;
-
-      transition:
-        background 0.3s,
-        transform 0.3s;
+      padding: 14px 24px;
     }
-
-    .btn:hover {
-      background: #ef6c00;
-      transform: translateY(-3px);
-    }
-
-    /* =========================
-       區塊標題
-    ========================= */
-
-    .title {
-      text-align: center;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.5;
-      color: #2e7d32;
-      margin-bottom: 48px;
-    }
-
-    /* =========================
-       我們的故事
-    ========================= */
-
-    .story {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 45px;
-      align-items: center;
-    }
-
-    .story img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: 20px;
-      background: #e8eee5;
-    }
-
-    .story h3 {
-      font-size: 28px;
-      color: #388e3c;
-      margin-bottom: 18px;
-    }
-
-    .story p {
-      font-size: 17px;
-      line-height: 2;
-    }
-    
-/* =========================
-   我們的故事照片：兩排並排
-========================= */
-
-.story-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  margin-top: 40px;
-  width: 100%;
-}
-
-.story-gallery img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 14px;
-  background: #e8eee5;
-}
-
-/* 平板 */
-@media (max-width: 900px) {
-  .story-gallery {
-    gap: 14px;
   }
-
-  .story-gallery img {
-    height: 210px;
-  }
-}
-
-/* 手機 */
-@media (max-width: 600px) {
-  .story-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 28px;
-  }
-
-  .story-gallery img {
-    height: 160px;
-  }
-}
-
-
-    /* =========================
-       毛孩卡片
-    ========================= */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      min-width: 0;
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    .card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      background: #e8eee5;
-    }
-
-    .card h3 {
-      padding: 18px 20px 8px;
-      color: #388e3c;
-      font-size: 23px;
-    }
-
-    .card p {
-      padding: 0 20px 24px;
-      line-height: 1.9;
-    }
-
-    /* =========================
-       救援成果
-    ========================= */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 25px;
-      text-align: center;
-    }
-
-    .stat {
-      padding: 20px 10px;
-    }
-
-    .number {
-      font-size: clamp(38px, 5vw, 60px);
-      font-weight: 900;
-      color: #ff9800;
-      line-height: 1.4;
-    }
-
-    .stat-label {
-      font-size: 18px;
-      color: #555;
-    }
-
-    /* =========================
-       捐款區塊
-    ========================= */
-
-    .donate {
-      background: #2e7d32;
-      color: #fff;
-      text-align: center;
-    }
-
-    .donate h2 {
-      font-size: clamp(27px, 4vw, 42px);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .donate p {
-      font-size: 19px;
-      margin-bottom: 30px;
-    }
-
-    /* =========================
-       Footer
-    ========================= */
-
-    footer {
-      background: #222;
-      color: #eee;
-      text-align: center;
-      padding: 35px 20px;
-      font-size: 14px;
-    }
-
-    /* =========================
-       捲動顯示效果
-    ========================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s, transform 0.7s;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================
-       平板與手機
-    ========================= */
-
-    @media (max-width: 900px) {
-      nav {
-        padding: 12px 4%;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      nav ul {
-        gap: 15px;
-      }
-
-      .story {
-        gap: 28px;
-      }
-
-      .cards {
-        gap: 18px;
-      }
-
-      .card img {
-        height: 220px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      html {
-        scroll-padding-top: 75px;
-      }
-
-      section {
-        padding: 65px 6%;
-      }
-
-      nav {
-        min-height: 68px;
-        padding: 10px 5%;
-        gap: 10px;
-      }
-
-      .logo {
-        flex: 1;
-        min-width: 0;
-        font-size: 16px;
-      }
-
-      .menu-toggle {
-        display: block;
-        flex-shrink: 0;
-      }
-
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 15px 6% 22px;
-
-        background: #fff;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 5px;
-
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li a {
-        padding: 10px 8px;
-        border-bottom: 1px solid #eee;
-      }
-
-
-    
-   
-       /* 手機封面 */
-       .hero {
-        min-height: 0;
-        height: auto;
-        padding: 0;
-        aspect-ratio: 832 / 1000;
-
-         background-size:  100% auto;
-         background-position: center top;
-         background-repeat: no-repeat;
-         background-color: #dff2d8;
-         }
-
-
-       .hero h1 {
-        font-size: clamp(29px, 8vw, 36px);
-        line-height: 1.5;
-        margin-bottom: 18px;
-        }
-
-      .hero p {
-        font-size: 17px;
-        line-height: 1.8;
-        margin-bottom: 25px;
-        }
-
-      .hero .btn {
-        font-size: 17px;
-        padding: 13px 28px;
-      }
-
-      /* 故事改為上下排列 */
-
-      .story {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .story h3 {
-        font-size: 25px;
-      }
-
-      /* 毛孩卡片改為單欄 */
-
-      .cards {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .card img {
-        height: auto;
-        aspect-ratio: 4 / 3;
-      }
-
-      /* 成果數字 */
-
-      .stats {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
-
-      .stat {
-        padding: 15px 10px;
-      }
-
-      .number {
-        font-size: 45px;
-      }
-
-      .donate p {
-        font-size: 17px;
-      }
-    }
-
-    /* 尊重使用者減少動態效果的設定 */
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
-
-  <!-- 導覽列 -->
-
-  <nav aria-label="主要導覽">
-
-    <a class="logo" href="#home">
-      🐶 台灣流浪動物森林之家尊生會
-    </a>
-
-    <ul id="navMenu">
-      <li><a href="#home">首頁</a></li>
-      <li><a href="#story">救援故事</a></li>
-      <li><a href="#animals">等待認養</a></li>
-      <li><a href="#results">救援成果</a></li>
-      <li><a href="#donate">支持我們</a></li>
-      <li><a href="#contact">聯絡我們</a></li>
-    </ul>
-
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      type="button"
-      aria-label="開啟導覽選單"
-      aria-expanded="false"
-      aria-controls="navMenu">
-      ☰
-    </button>
-
-  </nav>
-
-  <!-- 首頁封面 -->
-
-  <header class="hero" id="home">
-
-    <div class="hero-content">
-
-
-    </div>
-
+  <header>
+    <h1>男士理髮服務</h1>
   </header>
 
   <main>
+    <section class="content">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
+        alt="男士理髮店">
 
-    <!-- 我們的故事 -->
-
-    
-<section id="story" class="reveal">
-
-  <h2 class="title">我們的故事</h2>
-
-  <div class="story">
-
-    <img
-      src="./images/about.jpg"
-      alt="森林之家流浪動物救援與照護"
-      loading="lazy">
-
-    <div>
-      <h3>用愛改變生命</h3>
+      <h2>專業剪髮服務</h2>
 
       <p>
-        我們每天投入流浪動物救援、醫療、送養及照護工作，
-        希望讓更多毛孩重新相信人類。
+        提供男士剪髮與造型服務，
+        讓你展現最佳形象。
       </p>
 
-      <p>
-        每一個生命都值得被尊重，每一次救援，
-        都是讓牠們重新擁有希望的開始。
-      </p>
-    </div>
-
-  </div>
-
-  <!-- 在這裡加入兩排照片 -->
-  <div class="story-gallery">
-
-    <img src="./images/story1.jpg" alt="救援故事照片一" loading="lazy">
-    <img src="./images/story2.jpg" alt="救援故事照片二" loading="lazy">
-    <img src="./images/story3.jpg" alt="救援故事照片三" loading="lazy">
-
-    <img src="./images/story4.jpg" alt="救援故事照片四" loading="lazy">
-    <img src="./images/story5.jpg" alt="救援故事照片五" loading="lazy">
-    <img src="./images/story6.jpg" alt="救援故事照片六" loading="lazy">
-
-  </div>
-
-</section>
-
-    <!-- 等待幸福的毛孩 -->
-
-    <section id="animals" class="reveal">
-
-      <h2 class="title">等待幸福的毛孩</h2>
-
-      <div class="cards">
-
-        <article class="card">
-
-          <img
-            src="./images/dog1.jpg"
-            alt="等待認養的狗狗小黑"
-            loading="lazy">
-
-          <h3>小黑</h3>
-
-          <p>等待認養中，親人又活潑，期待找到疼愛牠的家人。</p>
-
-        </article>
-
-        <article class="card">
-
-          <img
-            src="./images/cat1.jpg"
-            alt="等待認養的貓咪咪咪"
-            loading="lazy">
-
-          <h3>咪咪</h3>
-
-          <p>喜歡撒嬌，期待一個溫暖的家，展開幸福的新生活。</p>
-
-        </article>
-
-        <article class="card">
-
-          <img
-            src="./images/dog2.jpg"
-            alt="救援成功的狗狗阿福"
-            loading="lazy">
-
-          <h3>阿福</h3>
-
-          <p>救援成功，健康恢復中，感謝每一位關心牠的朋友。</p>
-
-        </article>
-
-      </div>
-
+      <a href="#contact" class="btn">預約服務</a>
     </section>
 
-    <!-- 救援成果 -->
-
-    <section id="results" class="reveal">
-
-      <h2 class="title">救援成果</h2>
-
-      <div class="stats">
-
-        <div class="stat">
-          <div class="number">1000+</div>
-          <div class="stat-label">救援毛孩</div>
-        </div>
-
-        <div class="stat">
-          <div class="number">850+</div>
-          <div class="stat-label">成功送養</div>
-        </div>
-
-        <div class="stat">
-          <div class="number">300+</div>
-          <div class="stat-label">愛心志工</div>
-        </div>
-
-      </div>
-
+    <section id="contact" class="content">
+      <h2>預約與聯絡</h2>
+      <p>歡迎預約，打造專屬你的髮型。</p>
     </section>
-
-    <!-- 愛心捐款 -->
-
-    <section id="donate" class="donate reveal">
-
-      <h2>您的每一份愛心，都能改變生命</h2>
-
-      <p>每一筆支持，都是毛孩繼續走下去的希望。</p>
-
-      <!-- 請將 #contact 改成協會實際的捐款資訊網址或區塊 -->
-
-      <a class="btn" href="#contact">了解如何支持我們</a>
-
-    </section>
-
   </main>
-
-  <!-- 聯絡我們 -->
-
-  <footer id="contact">
-
-    <p>台灣流浪動物森林之家尊生會</p>
-
-    <p>因為有您，生命更有希望。</p>
-
-    <p>© 2026 台灣流浪動物森林之家尊生會</p>
-
-  </footer>
-
-  <script>
-    /* =========================
-       手機版漢堡選單
-    ========================= */
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
-
-    function closeMenu() {
-      navMenu.classList.remove("show");
-      menuToggle.textContent = "☰";
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "開啟導覽選單");
-    }
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("show");
-
-      menuToggle.textContent = isOpen ? "✕" : "☰";
-
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "關閉導覽選單" : "開啟導覽選單"
-      );
-    });
-
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    /* 視窗放大時關閉手機選單 */
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-      }
-    });
-
-    /* =========================
-       區塊捲動顯示效果
-    ========================= */
-
-    const revealItems = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.12
-        }
-      );
-
-      revealItems.forEach(item => {
-        revealObserver.observe(item);
-      });
-    } else {
-      revealItems.forEach(item => {
-        item.classList.add("active");
-      });
-    }
-  </script>
-
 </body>
 </html>
