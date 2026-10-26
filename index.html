@@ -98,7 +98,24 @@
     .btn {
       padding: 14px 24px;
     }
+    /* 漢堡選單按鈕 */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #D4AF37;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+/* 手機版顯示三條線 */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: inline-block;
+    margin-top: 12px;
   }
+}
+
 </style>
 </head>
 
@@ -106,6 +123,19 @@
     <header>
   <h1>紳士理髮 Barber Studio</h1>
   <p class="subtitle">專業男士理髮服務</p>
+  <button id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="開啟導覽選單"
+          aria-expanded="false">
+     ☰
+    </button> 
+    <nav id="navMenu" class="nav-menu"
+      <a href="services">服務項目<a/>
+        <a href="booking">預約服務</a>
+        <button id="translateBtn"type="button">English</button>button>
+    </nav>
+      
     </header>
 
   <main>
@@ -129,5 +159,16 @@
       <p>歡迎預約，打造專屬你的髮型。</p>
     </section>
   </main>
+  <script>
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("show");
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+  menuToggle.setAttribute("aria-expanded", isOpen);
+});
+</script>
 </body>
 </html>
