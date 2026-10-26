@@ -7,171 +7,364 @@
   <title>紳士理髮 Barber Studio</title>
 
   <style>
-  /* 1. 統一所有元素的尺寸計算方式 */
-  * {
-    box-sizing: border-box;
-  }
+    /* 1. 全站基本設定 */
+    * {
+      box-sizing: border-box;
+    }
 
-  /* 2. 網頁基本設定 */
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333333;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* 3. 頂部標題區 */
-  header {
-    position: relative;
-    width: 100%;
-    background-color: #333333;
-    color:white;
-    padding: 24px 16px;
-    text-align: center;
-  }
-    header h1{
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333333;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* 2. 頂部標題區 */
+    header {
+      position: relative;
+      width: 100%;
+      background-color: #333333;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    header h1 {
       color: #D4AF37;
-  }    
-  
-  header .subtitle {
-  color: white;
-  font-size: 16px;
-  margin-top: 8px;
-  }
-
-
-  h1 {
-    font-size: 36px;
-  }
-
-  /* 4. 內容區域 */
-  .content {
-    max-width: 800px;
-    margin: auto;
-    padding: 24px 16px;
-    text-align: center;
-  }
-
-  /* 5. 圖片響應式設定 */
-  .content img {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  /* 6. 內文字體 */
-  .content p {
-    font-size: 20px;
-    line-height: 1.8;
-  }
-
-  /* 7. 預約按鈕 */
-  .btn {
-  display: inline-block;
-  background-color: #5C4033;
-  color: white;
-  padding: 14px 28px;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #3E2B22;
-}
-
-  /* 8. 手機版專用設定 */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 28px;
+      font-size: 36px;
       margin: 0;
     }
 
+    header .subtitle {
+      color: white;
+      font-size: 16px;
+      margin: 8px 0 0;
+    }
+
+    /* 3. 漢堡選單按鈕 */
+    .menu-toggle {
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      z-index: 1002;
+      background: transparent;
+      border: none;
+      color: #D4AF37;
+      font-size: 36px;
+      line-height: 1;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    /* 4. 全螢幕漢堡選單 */
+    .nav-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1001;
+
+      flex-direction: column;
+      align-items: stretch;
+
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      overflow-y: auto;
+
+      padding: 20px 28px 40px;
+      background:
+        radial-gradient(
+          ellipse at 20% 85%,
+          rgba(112, 73, 48, 0.35),
+          transparent 55%
+        ),
+        #30201c;
+
+      color: white;
+      text-align: left;
+    }
+
+    .nav-menu.show {
+      display: flex;
+    }
+
+    /* 5. 選單頂部品牌與關閉按鈕 */
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      min-height: 88px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #50382d;
+    }
+
+    .nav-brand {
+      color: #D4AF37;
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 1.35;
+    }
+
+    .nav-brand small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+
+    .menu-close {
+      flex-shrink: 0;
+      background: transparent;
+      border: none;
+      color: #D4AF37;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    /* 6. 選單項目 */
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      width: 100%;
+      padding: 20px 0;
+
+      color: white;
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: normal;
+      line-height: 1.5;
+
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .nav-links a span {
+      color: #D4AF37;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #D4AF37;
+    }
+
+    /* 7. 英文按鈕 */
+    .translate-btn {
+      align-self: flex-start;
+      margin-top: 28px;
+      padding: 10px 22px;
+
+      background: transparent;
+      color: #D4AF37;
+      border: 1px solid #D4AF37;
+      border-radius: 4px;
+
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    /* 8. 網頁內容 */
     .content {
-      padding: 20px 16px;
+      max-width: 800px;
+      margin: auto;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .content img {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin: 0 auto;
     }
 
     .content p {
-      font-size: 16px;
+      font-size: 20px;
+      line-height: 1.8;
     }
 
+    /* 9. 預約按鈕 */
     .btn {
-      padding: 14px 24px;
+      display: inline-block;
+      background-color: #5C4033;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
-/* 漢堡選單按鈕 */
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  color: #D4AF37;
-  font-size: 36px;
-  cursor: pointer;
-}
 
-/* 手機版：固定在標題區右上角 */
-@media (max-width: 600px) {
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    margin: 0;
-    padding: 4px;
-  }
-}
-    /* 選單預設隱藏 */
-.nav-menu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-  margin-top: 16px;
-}
+    .btn:hover {
+      background-color: #3E2B22;
+    }
 
-/* 點擊漢堡按鈕後顯示選單 */
-.nav-menu.show {
-  display: flex;
-}
+    /* 10. 手機版設定 */
+    @media (max-width: 600px) {
+      header {
+        padding: 24px 54px 24px 12px;
+      }
 
-/* 選單連結樣式 */
-.nav-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-}
+      header h1 {
+        font-size: 28px;
+      }
 
-</style>
+      header .subtitle {
+        font-size: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .content {
+        padding: 20px 16px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 14px 24px;
+      }
+
+      .nav-menu {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .nav-brand {
+        font-size: 23px;
+      }
+
+      .nav-links a {
+        font-size: 21px;
+      }
+
+      .nav-links a span {
+        font-size: 17px;
+      }
+    }
+
+    /* 11. 小螢幕調整 */
+    @media (max-width: 380px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .nav-menu {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .nav-brand {
+        font-size: 20px;
+      }
+
+      .nav-links a {
+        font-size: 19px;
+      }
+
+      .nav-links a span {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  
-<header>
-  <h1>紳士理髮 Barber Studio</h1>
-  <p class="subtitle">專業男士理髮服務</p>
 
-  <!-- 漢堡選單按鈕 -->
-  <button id="menuToggle"
-          class="menu-toggle"
-          type="button"
-          aria-label="開啟導覽選單"
-          aria-expanded="false">
-    ☰
-  </button>
+  <!-- 頂部標題 -->
+  <header>
+    <h1>紳士理髮 Barber Studio</h1>
+    <p class="subtitle">專業男士理髮服務</p>
 
-  <!-- 漢堡選單內容 -->
-  <nav id="navMenu" class="nav-menu">
-    <a href="#services">服務項目</a>
-    <a href="#contact">預約服務</a>
-    <button id="translateBtn" type="button">English</button>
+    <button
+      id="menuToggle"
+      class="menu-toggle"
+      type="button"
+      aria-label="開啟導覽選單"
+      aria-expanded="false"
+      aria-controls="navMenu"
+    >☰</button>
+  </header>
+
+  <!-- 全螢幕漢堡選單 -->
+  <nav id="navMenu" class="nav-menu" aria-label="主要導覽">
+
+    <div class="nav-top">
+      <div class="nav-brand">
+        紳士理髮
+        <small>BARBER STUDIO</small>
+      </div>
+
+      <button
+        id="menuClose"
+        class="menu-close"
+        type="button"
+        aria-label="關閉導覽選單"
+      >×</button>
+    </div>
+
+    <div class="nav-links">
+      <a href="#services">
+        <span>OUR SERVICES</span>
+        <span>服務項目</span>
+      </a>
+
+      <a href="#contact">
+        <span>BOOKING</span>
+        <span>預約服務</span>
+      </a>
+
+      <a href="#about">
+        <span>ABOUT US</span>
+        <span>關於我們</span>
+      </a>
+
+      <a href="#contact">
+        <span>CONTACT</span>
+        <span>聯絡我們</span>
+      </a>
+    </div>
+
+    <button id="translateBtn" class="translate-btn" type="button">
+      English
+    </button>
+
   </nav>
-</header>
 
+  <!-- 網頁主要內容 -->
   <main>
-    <section class="content">
+
+    <section id="services" class="content">
       <img
         src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"
-        alt="男士理髮店">
+        alt="男士理髮店"
+      >
 
       <h2>專業剪髮服務</h2>
 
@@ -183,22 +376,67 @@
       <a href="#contact" class="btn">預約服務</a>
     </section>
 
+    <section id="about" class="content">
+      <h2>關於我們</h2>
+      <p>專業男士理髮服務，打造專屬你的風格。</p>
+    </section>
+
     <section id="contact" class="content">
       <h2>預約與聯絡</h2>
       <p>歡迎預約，打造專屬你的髮型。</p>
     </section>
+
   </main>
+
   <script>
-const menuToggle = document.getElementById("menuToggle");
-const navMenu = document.getElementById("navMenu");
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const menuClose = document.getElementById("menuClose");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("show");
+    // 開啟選單
+    function openMenu() {
+      navMenu.classList.add("show");
+      document.body.classList.add("menu-open");
 
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-  menuToggle.setAttribute("aria-expanded", isOpen);
-});
- 
-</script>
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "關閉導覽選單");
+      menuToggle.textContent = "×";
+    }
+
+    // 關閉選單
+    function closeMenu() {
+      navMenu.classList.remove("show");
+      document.body.classList.remove("menu-open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "開啟導覽選單");
+      menuToggle.textContent = "☰";
+    }
+
+    // 點擊漢堡按鈕切換選單
+    menuToggle.addEventListener("click", () => {
+      if (navMenu.classList.contains("show")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // 點擊右上角 X 關閉
+    menuClose.addEventListener("click", closeMenu);
+
+    // 點擊導覽連結後關閉選單
+    navMenu.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // 按下 Escape 關閉選單
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+  </script>
+
 </body>
 </html>
