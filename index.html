@@ -21,6 +21,7 @@
 
   /* 3. 頂部標題區 */
   header {
+    position: relative;
     width: 100%;
     background-color: #333333;
     color:white;
@@ -108,11 +109,15 @@
   cursor: pointer;
 }
 
-/* 手機版：三條線靠右 */
+/* 手機版：固定在標題區右上角 */
 @media (max-width: 600px) {
   .menu-toggle {
     display: block;
-    margin: 12px 0 0 auto;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    margin: 0;
+    padding: 4px;
   }
 }
 
