@@ -120,28 +120,52 @@
     padding: 4px;
   }
 }
+    /* 選單預設隱藏 */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+/* 點擊漢堡按鈕後顯示選單 */
+.nav-menu.show {
+  display: flex;
+}
+
+/* 選單連結樣式 */
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
 
 </style>
 </head>
 
 <body>
-    <header>
+  
+<header>
   <h1>紳士理髮 Barber Studio</h1>
   <p class="subtitle">專業男士理髮服務</p>
+
+  <!-- 漢堡選單按鈕 -->
   <button id="menuToggle"
           class="menu-toggle"
           type="button"
           aria-label="開啟導覽選單"
           aria-expanded="false">
-     ☰
-    </button> 
-    <nav id="navMenu" class="nav-menu"
-      <a href="services">服務項目<a/>
-        <a href="booking">預約服務</a>
-        <button id="translateBtn"type="button">English</button>button>
-    </nav>
-      
-    </header>
+    ☰
+  </button>
+
+  <!-- 漢堡選單內容 -->
+  <nav id="navMenu" class="nav-menu">
+    <a href="#services">服務項目</a>
+    <a href="#contact">預約服務</a>
+    <button id="translateBtn" type="button">English</button>
+  </nav>
+</header>
 
   <main>
     <section class="content">
@@ -174,6 +198,7 @@ menuToggle.addEventListener("click", () => {
   menuToggle.textContent = isOpen ? "✕" : "☰";
   menuToggle.setAttribute("aria-expanded", isOpen);
 });
+ 
 </script>
 </body>
 </html>
