@@ -67,37 +67,40 @@
     display: none;
     }
 
-    /* 4. 全螢幕漢堡選單 */
-    .nav-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 1001;
+   /* 右側滑出的漢堡選單 */
+.nav-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
 
-      flex-direction: column;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
 
-      width: 100%;
-      height: 100vh;
-      height: 100dvh;
-      overflow-y: auto;
+  width: 300px;
+  max-width: 85%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
 
-      padding: 20px 28px 40px;
-      background:
-        radial-gradient(
-          ellipse at 20% 85%,
-          rgba(112, 73, 48, 0.35),
-          transparent 55%
-        ),
-        #30201c;
+  padding: 20px 28px 40px;
 
-      color: white;
-      text-align: left;
-    }
+  background:
+    radial-gradient(
+      ellipse at 20% 85%,
+      rgba(112, 73, 48, 0.35),
+      transparent 55%
+    ),
+    #30201c;
 
-    .nav-menu.show {
-      display: flex;
-    }
+  color: white;
+  text-align: left;
+}
+
+.nav-menu.show {
+  display: flex;
+}
 
     /* 5. 選單頂部品牌與關閉按鈕 */
     .nav-top {
