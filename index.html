@@ -11,6 +11,10 @@
     * {
       box-sizing: border-box;
     }
+    /* 所有圖片都不能超出畫面寬度 */
+img {
+  max-width: 100%;
+}
 
     html {
       scroll-behavior: smooth;
@@ -348,6 +352,88 @@
     font-size: 19px;
   }
 }
+    
+/* 12. 關於我們區域 */
+#about {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px 20px;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 24px;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  #about {
+    padding: 24px 16px;
+  }
+
+  #about h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 24px 20px;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
 
   </style>
 </head>
@@ -390,13 +476,15 @@
         <span>首頁</span>
       </a>
 
-      <a href="#contact">
-        <span>關於我們</span>
-      </a>
+   
+     <a href="#about">
+      <span>關於我們</span>
+     </a>
 
-      <a href="#about">
-        <span>服務項目</span>
-      </a>
+     <a href="#services">
+     <span>服務項目</span>
+     </a>
+
 
       <a href="#contact">
         <span>預約聯絡</span>
