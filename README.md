@@ -1,1 +1,618 @@
 
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>紳士理髮 Barber Studio</title>
+
+  <style>
+    /* 1. 全站基本設定 */
+    * {
+      box-sizing: border-box;
+    }
+    /* 所有圖片都不能超出畫面寬度 */
+img {
+  max-width: 100%;
+}
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333333;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    /* 2. 頂部標題區 */
+    header {
+      position: relative;
+      width: 100%;
+      background-color: #333333;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #D4AF37;
+      font-size: 36px;
+      margin: 0;
+    }
+
+    header .subtitle {
+      color: white;
+      font-size: 16px;
+      margin: 8px 0 0;
+    }
+
+    /* 3. 漢堡選單按鈕 */
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      z-index: 1002;
+      background: transparent;
+      border: none;
+      color: #D4AF37;
+      font-size: 36px;
+      line-height: 1;
+      padding: 4px;
+      cursor: pointer;
+    }
+     body.menu-open .menu-toggle {
+    display: none;
+    }
+
+   /* 右側滑出的漢堡選單 */
+.nav-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1001;
+
+  flex-direction: column;
+  align-items: stretch;
+
+  width: 300px;
+  max-width: 85%;
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: auto;
+
+  padding: 20px 28px 40px;
+
+  background:
+    radial-gradient(
+      ellipse at 20% 85%,
+      rgba(112, 73, 48, 0.35),
+      transparent 55%
+    ),
+    #30201c;
+
+  color: white;
+  text-align: left;
+}
+
+.nav-menu.show {
+  display: flex;
+}
+
+    /* 5. 選單頂部品牌與關閉按鈕 */
+    .nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      min-height: 88px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #50382d;
+    }
+
+    .nav-brand {
+      color: #D4AF37;
+      font-size: 25px;
+      font-weight: bold;
+      line-height: 1.35;
+    }
+
+    .nav-brand small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-align: center;
+    }
+
+    .menu-close {
+      flex-shrink: 0;
+      background: transparent;
+      border: none;
+      color: #D4AF37;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 1;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    /* 6. 選單項目 */
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      width: 100%;
+      padding: 20px 0;
+
+      color: white;
+      text-decoration: none;
+      font-size: 23px;
+      font-weight: normal;
+      line-height: 1.5;
+
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .nav-links a span {
+      color: #D4AF37;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: #D4AF37;
+    }
+
+   
+    /* 8. 網頁內容 */
+    .content {
+      max-width: 800px;
+      margin: auto;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .content img {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .content p {
+      font-size: 20px;
+      line-height: 1.8;
+    }
+
+    /* 9. 預約按鈕 */
+    .btn {
+      display: inline-block;
+      background-color: #5C4033;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #3E2B22;
+    }
+
+    /* 10. 手機版設定 */
+    @media (max-width: 600px) {
+      header {
+        padding: 24px 54px 24px 12px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      header .subtitle {
+        font-size: 16px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .content {
+        padding: 20px 16px;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 14px 24px;
+      }
+
+      .nav-menu {
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .nav-brand {
+        font-size: 23px;
+      }
+
+      .nav-links a {
+        font-size: 21px;
+      }
+
+      .nav-links a span {
+        font-size: 17px;
+      }
+    }
+
+    /* 11. 小螢幕調整 */
+    @media (max-width: 380px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      .nav-menu {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .nav-brand {
+        font-size: 20px;
+      }
+
+      .nav-links a {
+        font-size: 19px;
+      }
+
+      .nav-links a span {
+        font-size: 15px;
+      }
+    }
+    
+/* 首頁主視覺 */
+.hero {
+  width: 100%;
+  min-height: 460px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 40px 6%;
+  color: white;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.15)
+    ),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-label {
+  color: #D4AF75;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin: 10px 0;
+  line-height: 1.2;
+}
+
+.hero h2 {
+  font-size: 23px;
+  margin: 10px 0;
+}
+
+.hero-description {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 400px;
+    padding: 30px 24px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero h2 {
+    font-size: 19px;
+  }
+}
+    
+/* 12. 關於我們區域 */
+#about {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px 20px;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 0 24px;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  margin: 0 0 24px;
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* 手機版 */
+@media (max-width: 600px) {
+  #about {
+    padding: 24px 16px;
+  }
+
+  #about h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 24px 20px;
+    background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 頂部標題 -->
+  <header>
+    <h1>紳士理髮 Barber Studio</h1>
+
+    <button
+      id="menuToggle"
+      class="menu-toggle"
+      type="button"
+      aria-label="開啟導覽選單"
+      aria-expanded="false"
+      aria-controls="navMenu"
+    >☰</button>
+  </header>
+
+  <!-- 全螢幕漢堡選單 -->
+  <nav id="navMenu" class="nav-menu" aria-label="主要導覽">
+
+    <div class="nav-top">
+      <div class="nav-brand">
+        紳士理髮
+        <small>BARBER STUDIO</small>
+      </div>
+
+      <button
+        id="menuClose"
+        class="menu-close"
+        type="button"
+        aria-label="關閉導覽選單"
+      >×</button>
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">
+        <span>首頁</span>
+      </a>
+
+   
+     <a href="#about">
+      <span>關於我們</span>
+     </a>
+
+     <a href="#services">
+     <span>服務項目</span>
+     </a>
+
+
+      <a href="#contact">
+        <span>預約聯絡</span>
+      </a>
+    </div>
+
+  </nav>
+
+  <!-- 網頁主要內容 -->
+  <main>
+
+   
+<section id="home" class="hero">
+
+  <div class="hero-content">
+
+    <p class="hero-label">BARBER STUDIO</p>
+
+    <h1>紳士理髮</h1>
+
+    <h2>專業男士剪髮與造型服務</h2>
+
+    <p class="hero-description">
+      細節成就風格，打造更好的自己。
+    </p>
+
+    <a href="#contact" class="btn">立即預約</a>
+
+  </div>
+
+</section>
+
+  
+<section id="about">
+  <h2>關於我們</h2>
+
+  <div class="about-content">
+    <p>
+      歡迎來到紳士理髮 Barber Studio。
+      我們專注於男士剪髮、造型與個人風格設計，
+      從細節出發，為每一位顧客打造最適合自己的形象。
+      不論是俐落短髮、經典油頭，還是現代流行造型，
+      我們都用心對待每一次服務，讓你展現自信與品味。
+    </p>
+
+    <img
+      src="images/gettyimages-1973194125-612x612.jpg"
+      alt="紳士理髮店環境"
+      class="about-image"
+    >
+    <img
+  src="images/ALL_news_25K06_27mRyxyN3R.jpg"
+  alt="男士理髮服務"
+  class="about-image"
+>
+  </div>
+</section>
+   
+    <section id="services" class="content">
+      <h2>服務項目</h2>
+
+      <div class="services">
+    
+        <img
+         src="images/138513.jpg"
+         alt="髮型設計"
+         class="about-image"
+         >
+   
+       </div>
+    </section>
+
+    <section id="contact" class="content">
+      <h2>預約與聯絡</h2>
+      <p>歡迎預約，打造專屬你的髮型。</p>
+    </section>
+
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const menuClose = document.getElementById("menuClose");
+
+    // 開啟選單
+    function openMenu() {
+      navMenu.classList.add("show");
+      document.body.classList.add("menu-open");
+
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.setAttribute("aria-label", "關閉導覽選單");
+      menuToggle.textContent = "×";
+    }
+
+    // 關閉選單
+    function closeMenu() {
+      navMenu.classList.remove("show");
+      document.body.classList.remove("menu-open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "開啟導覽選單");
+      menuToggle.textContent = "☰";
+    }
+
+    // 點擊漢堡按鈕切換選單
+    menuToggle.addEventListener("click", () => {
+      if (navMenu.classList.contains("show")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // 點擊右上角 X 關閉
+    menuClose.addEventListener("click", closeMenu);
+
+    // 點擊導覽連結後關閉選單
+    navMenu.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // 按下 Escape 關閉選單
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
